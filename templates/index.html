@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PersonalityGPT</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="app-branding">
+          <span class="app-logo">🧠</span>
+          <span class="app-name">PersonalityGPT</span>
+        </div>
+        <button class="new-chat-btn" id="new-chat-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          New chat
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <ul class="conversations-list" id="conversations-list">
+          <!-- Conversations will be dynamically added here -->
+        </ul>
+      </div>
+      <div class="sidebar-footer">
+        <button class="clear-chat" id="clear-conversations">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          Delete current chat
+        </button>
+      </div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcome-screen">
+      <div class="welcome-header">
+        <h1 class="welcome-title">PersonalityGPT</h1>
+        <p class="welcome-tagline">Chat with AI in different personalities</p>
+      </div>
+      <h2 class="welcome-subtitle">Choose a personality to get started</h2>
+      <div class="personalities" id="personalities-grid">
+        <!-- Personality cards will be dynamically added here -->
+      </div>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chat-container" style="display: none;">
+      <div class="chat-header">
+        <button id="menu-toggle" class="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <div class="model-selector">
+          <select id="personality-selector" class="personality-selector">
+            <!-- Options will be dynamically added here -->
+          </select>
+        </div>
+      </div>
+      
+      <div class="chat-messages" id="chat-messages">
+        <!-- Chat messages will be dynamically added here -->
+      </div>
+      
+      <div class="chat-input-container">
+        <div class="chat-input-wrapper">
+          <textarea id="chat-input" class="chat-input" placeholder="Message GPT-4o..." rows="1"></textarea>
+          <button id="send-button" class="send-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='js/personalities.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/markdown.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
