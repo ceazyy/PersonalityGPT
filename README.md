@@ -35,8 +35,8 @@ A dynamic, interactive ChatGPT interface powered by OpenAI's GPT-4o, enabling us
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/personality-gpt.git
-cd personality-gpt
+git clone https://github.com/yourusername/personalitygpt.git
+cd personalitygpt
 ```
 
 2. Install dependencies:
